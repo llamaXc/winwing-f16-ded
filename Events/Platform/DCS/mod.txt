@@ -1,0 +1,1 @@
+// key是Mods下aircraft中机型对应文件夹名,value为对应机型entry中的LogBook

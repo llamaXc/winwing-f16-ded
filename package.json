@@ -1,0 +1,35 @@
+{
+  "name": "SimAppPro",
+  "version": "1.11.6",
+  "description": "",
+  "main": "main.js",
+  "postinstall": "electron-builder install-app-deps",
+  "author": "WINWING",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.22.0",
+    "babel-loader": "^8.0.6",
+    "bootstrap-vue": "^2.21.2",
+    "electron-log": "^3.0.9",
+    "electron-store": "^4.0.0",
+    "electron-updater": "^4.3.9",
+    "element-resize-detector": "^1.1.15",
+    "element-ui": "^2.15.6",
+    "iconv-lite": "ashtuchkin/iconv-lite",
+    "jquery": "^3.4.1",
+    "js-base64": "^2.5.2",
+    "lodash": "^4.17.15",
+    "regedit": "^5.1.2",
+    "request": "^2.88.0",
+    "require-all": "^3.0.0",
+    "systeminformation": "^5.15.1",
+    "vue": "^2.6.10",
+    "vue-happy-scroll": "^2.1.0",
+    "vue-i18n": "^8.12.0",
+    "vuex": "^3.6.2",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "electron": "^8.5.0"
+  }
+}
