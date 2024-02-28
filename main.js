@@ -5,20 +5,12 @@ const {
 
 } = require('electron')
 const electron = require('electron')
-
-
-const WWTHID = require('./mainsrc/WWTHID')
-// const store = require('./mainsrc/config_set');
-// const GetPath = require('./mainsrc/GetPath');
-// GetPath.Init(store);
-
 const path = require('path');
 var os = require('os');
 
 
+const WWTHID = require('./mainsrc/WWTHID')
 const F16ICP = require('./mainsrc/ICP_LCD/F16_ICP.js');
-
-// var Application = require('./mainsrc/Application');
 
 let mainWindow;
 
@@ -59,16 +51,13 @@ function createWindow () {
     });
   }
 
-  // eslint-disable-next-line camelcase
   var addCB_PartChange = function () {
     if (OpenDevicesState) {
       WWTHID.WWTHID_JSAPI.CB_PartChange(function (agr) {
-        F16ICP.Part(agr);
       });
     }
   }
 
-  // eslint-disable-next-line camelcase
   var addCB_DeviceChange = function () {
     if (OpenDevicesState) {
       WWTHID.WWTHID_JSAPI.CB_DeviceChange(function (agr) {
@@ -114,13 +103,6 @@ function createWindow () {
     WWTHID.WWTHID_JSAPI.CLS_CloseDevices();
     OpenDevicesFunc();
   }
-
-
-  mainWindow.on('close', function (event) {
-      // if (Application.Shutdown() === false) {
-      //   app.exit();
-      // }
-  });
 
   mainWindow.on('closed', function () {
     WWTHID.WWTHID_JSAPI.CB_Data(function (agr) { });
