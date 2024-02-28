@@ -1,10 +1,10 @@
 {
-  "name": "SimAppPro",
-  "version": "1.11.6",
-  "description": "",
+  "name": "F16DEDWriter",
+  "version": "1.0",
+  "description": "Control the WinWing F16 DED",
   "main": "main.js",
   "postinstall": "electron-builder install-app-deps",
-  "author": "WINWING",
+  "author": "Otter",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.22.0",

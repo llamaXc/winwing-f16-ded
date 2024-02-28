@@ -1,16 +1,12 @@
-// Modules to control application life and create native browser window
 const {
   app,
   BrowserWindow,
-
 } = require('electron')
 const electron = require('electron')
 const path = require('path');
-var os = require('os');
-
 
 const WWTHID = require('./mainsrc/WWTHID')
-const F16ICP = require('./mainsrc/ICP_LCD/F16_ICP.js');
+const F16ICP = require('./mainsrc/F16_ICP.js');
 
 let mainWindow;
 
@@ -27,7 +23,6 @@ function createWindow () {
       nodeIntegration: true
     },
     show: true
-
   })
 
   mainWindow.show()
@@ -89,30 +84,13 @@ function createWindow () {
     }
   };
 
-
-  var OpenCLS_OpenDevices = function (event, arg) {
-    CloseDevicesFunc();
-    WWTHID.WWTHID_JSAPI.CLS_OpenDevices(arg.ConfigPath, arg.Config);
-
-    OpenDevicesState = true;
-    addCB_PartChange();
-    addCB_DeviceChange();
-  }
-
-  var OpenCLS_CloseDevices = function (event, arg) {
-    WWTHID.WWTHID_JSAPI.CLS_CloseDevices();
-    OpenDevicesFunc();
-  }
-
   mainWindow.on('closed', function () {
     WWTHID.WWTHID_JSAPI.CB_Data(function (agr) { });
     WWTHID.WWTHID_JSAPI.CB_InputData(function (agr) { });
     WWTHID.WWTHID_JSAPI.CB_UpdateProgress(function (agr) { });
     WWTHID.WWTHID_JSAPI.CB_PartChange(function (agr) { });
     WWTHID.WWTHID_JSAPI.CB_DeviceChange(function (agr) { });
-
     mainWindow = null;
-
     app.quit();
   })
 
